@@ -1,0 +1,15 @@
+---
+const name = "Edwin";
+const description = "Desarrollador web apasionado por crear experiencias digitales limpias y funcionales.";
+const skills = ["JavaScript", "TypeScript", "Astro", "React", "CSS"];
+---
+
+<section class="about">
+  <h1>Sobre mí</h1>
+  <p>Hola, soy {name}. {description}</p>
+  <ul>
+    {skills.map((skill) => (
+      <li>{skill}</li>
+    ))}
+  </ul>
+</section>    
