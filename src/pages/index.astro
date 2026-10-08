@@ -1,14 +1,36 @@
 ---
 import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
-import About from '../components/About.astro';		
-
+import TimeLine from '../components/Timeline.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Hero />
-	<About />
+  <div class="home">
+    <Hero />
+	<TimeLine />
+  </div>
 </Layout>
+
+<style>
+.home{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    min-height:auto;
+    width:100%;
+    gap: clamp(40px, 5vh, 100px);
+    padding: clamp(20px, 5vw, 40px);
+}
+
+@media (min-width: 1024px) {
+  .home {
+    flex-direction: row;
+    justify-content:space-between;
+    min-height:100vh;
+  }
+}
+</style>
 

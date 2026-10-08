@@ -7,9 +7,47 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 	</head>
 	<body>
+		  <!-- Menú lateral -->
+  <aside class="sidebar">
+    <h2 class="logo">EM</h2>
+
+    <nav>
+      <a href="/#home">
+	  <img class="nav-iconn" src="/public/svg/play-svgrepo-com.svg" alt="Inicio"><span>Inicio</span></a>
+      <a href="/About">
+	    <img class="nav-icon" src="/public/svg/user-alt-1-svgrepo-com.svg" alt="Sobre mí"><span>Sobre mí</span></a>
+      <a href="/Miproyecto">
+	    <img class="nav-icon" src="/public/svg/x-box-gamepad-svgrepo-com.svg" alt="Mi Proyecto"><span> Mi Proyectos</span></a>
+	  <a href="/Experiencia">
+		<img class="nav-icon" src="/public/svg/sword-svgrepo-com.svg" alt="Experiencia"><span> Experiencia</span></a>
+      <a href="/Contacto">
+		<img class="nav-icon" src="/public/svg/gmail-svgrepo-com.svg" alt="Contacto"><span> Contacto</span></a>
+    </nav>
+	<div class="social">
+	  <a href="https://github.com/lexmurillo" target="_blank">
+		<img class="social-icons" src="/public/svg/github.svg" alt="Github">
+      </a>
+
+      <a href="https://www.linkedin.com/in/edwin-alexander-murillo-morales-59229a355/" target="_blank">
+        <img class="social-iconss" src="/public/svg/linkedin-svgrepo-com (1).svg" alt="LinkedIn">
+      </a>
+
+      <a href="https://wa.me/573132903811" target="_blank">
+        <img class="social-icons" src="/public/svg/whatsapp.svg" alt="WhatsApp">
+      </a>
+	</div>
+  </aside>
+
+
+  <!-- Contenido principal -->
+  <div class="hero-content">
+
 		<slot />
+  </div>
 	</body>
 </html>
 
@@ -18,10 +56,139 @@
 	body {
 		margin: 0;
 		width: 100%;
+		max-width: 100vw;
 		height: 100%;
-		background-image: url("/public/images/Fondo.jpeg");
+		overflow: hidden;
+		background-image: url("/images/Fondo.jpeg");
 		background-size: cover;
 		background-position: center;
-		background-repeat: no-repeat;
+		background-attachment: fixed;
+		font-family: 'Poppins', sans-serif;
+		font-size: clamp(14px, 2vw, 16px);
+		
+		:global(body){color: white;
+		font-family: 'segoe UI',sans-serif;}
 	}
+    nav{ display: flex;
+		flex-direction: column;
+		gap: clamp(15px, 3vw, 40px);
+		justify-content:flex-start;
+}
+     nav a{
+	display:flex;
+	align-items:flex-start;
+    color:white;
+    text-decoration:none;
+    padding: clamp(8px, 2vw, 12px) clamp(10px, 2vw, 15px);
+	border-radius:10px;
+	transition:all 0.2s ease;
+	gap:10px;
+	font-size:1rem;
+	font-weight:600;
+}
+
+    nav a:hover{
+		background-color:rgba(255,255,255,0.08);
+		color:#ff5c5c;
+		transform:translateX(5px);
+		flex: 1;
+}
+    .logo{
+    font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+
+.hero-content{
+	margin-left: clamp(0px, 20vw, 150px);
+	min-height:100vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+    display:flex;
+    flex-direction:column;
+	justify-content:center;
+    max-width:100%;
+	padding-left: clamp(20px, 5vw, 200px);
+	padding-right: clamp(20px, 5vw, 50px);
+}
+    .hero{
+    min-height:100vh;
+    display:flex;
+    color:white;
+}
+
+.sidebar{
+   
+	position:fixed;
+	top:0;
+	left:0;
+	width: clamp(60px, 20vw, 200px);
+	height:100vh;
+	display:flex;
+	flex-direction:column;
+	padding: clamp(30px, 5vw, 60px) clamp(15px, 3vw, 30px);
+	background-color:rgba(10,10,10,0.25);
+	backdrop-filter:blur(12px);
+	-webkit-backdrop-filter:blur(12px);
+	border-right:1px solid rgba(255,255,255,0.1);
+	box-shadow:0 0 30px rgba(0,0,0,0.3);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.sidebar::after{
+	content:"";
+	position:absolute;
+	top:0;
+	right:0;
+	width:2px;
+	height:100%;
+	background-color:#ff3c3c;
+	box-shadow:0 0 15px #ff3c3c;
+}
+body::before{
+	content:"";
+	position:fixed;
+	inset:0;
+	background-color:rgba(0,0,0,.45);
+	z-index:-1;
+}
+.social{
+    margin-top:auto;
+    margin-bottom: clamp(30px, 10vh, 100px);
+    display:flex;
+    justify-content:center;
+    gap: clamp(20px, 3vw, 35px);
+}
+
+.social a{
+    color:white;
+    font-size:1.7rem;
+    transition:.4s;
+}
+
+.social a:hover{
+    color:#ff5757;
+    transform:translateY(-3px);
+}
+.social-icons{
+	width: 30px;
+	height:30px;
+	filter:brightness(0) invert(1);
+}
+.social-iconss{
+	width: 35px;
+	height:35px;
+	filter:brightness(0) invert(1);
+}
+
+.nav-icon{
+	width: 35px;
+	height:35px;
+	filter:brightness(0) invert(1);}
+.nav-iconn{
+	width:30px;
+	height:30px;
+	filter:brightness(0) invert(1);}
+
+ 
 </style>

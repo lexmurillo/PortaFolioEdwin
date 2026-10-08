@@ -1,0 +1,59 @@
+---
+const name = "Edwin";
+const description = "Desarrollador web apasionado por crear experiencias digitales limpias y funcionales.";
+const skills = ["JavaScript", "TypeScript", "Astro", "React", "CSS"];
+import Layout from "../layouts/Layout.astro";
+---
+<Layout>
+<section id="About">
+  <h1>Sobre mí</h1>
+  <p>Hola, soy {name}. {description}</p>
+  <ul>
+    {skills.map((skill) => (
+      <li>{skill}</li>
+    ))}
+  </ul>
+</section>  
+</Layout>
+
+<style>
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: clamp(20px, 5vw, 40px);
+}
+
+h1 {
+  font-size: clamp(1.5rem, 6vw, 3rem);
+  margin-bottom: clamp(15px, 2vh, 25px);
+  color: #ff5c5c;
+}
+
+p {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  max-width: clamp(250px, 90vw, 600px);
+  margin-bottom: clamp(20px, 3vh, 30px);
+  line-height: 1.6;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 20px);
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: clamp(8px, 1.5vw, 12px) clamp(12px, 2vw, 20px);
+  background: rgba(255, 92, 92, 0.1);
+  border: 1px solid rgba(255, 92, 92, 0.3);
+  border-radius: 8px;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+}
+</style>  
