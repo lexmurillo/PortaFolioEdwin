@@ -1,46 +1,11 @@
-# Astro Starter Kit: Basics
+# Portafolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+Este repositorio contiene una de las primeras versiones de mi portafolio como desarrollador de software.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Actualmente se encuentra en desarrollo, ya que continúo explorando nuevas tecnologías y trabajando en diferentes proyectos que posteriormente podrán formar parte del portafolio.
 
-## 🚀 Project Structure
+La idea es ir mejorándolo poco a poco, tanto en su diseño como en la organización de los proyectos y la información que se presenta.
 
-Inside of your Astro project, you'll see the following folders and files:
+Algunos proyectos ya se encuentran en desarrollo y otros se irán incorporando a medida que avance en mi proceso de aprendizaje y formación.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Este repositorio representa una versión inicial de lo que espero convertir en un portafolio más completo y estructurado.
